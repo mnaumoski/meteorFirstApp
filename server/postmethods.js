@@ -10,6 +10,12 @@ Meteor.methods({
       }
     });
   },
+  likePost: function(postId){
+    userSignedIn = Meteor.user() || false;
+    if(userSignedIn){
+      Posts.update({_id: postId}, {$inc: {likes: 1} });
+    }
+  },
   deletePost: function(postId){
     var post = Posts.findOne({_id: postId }),
     postUserId = post.user._id;
