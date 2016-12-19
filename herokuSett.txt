@@ -1,0 +1,2 @@
+
+heroku config:set ROOT_URL="https://still-fortress-90710.herokuapp.com"
